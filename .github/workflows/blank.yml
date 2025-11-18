@@ -1,1 +1,18 @@
- 
+name: workflow - one
+on: push
+jobs:
+  build-job:
+    name: Hello world
+    runs-on: ubuntu-latest
+    steps:
+     -uses: actions/checkout@v4
+      name: checkout code
+     -name: hello world
+      run: echo Hi Monisha
+
+     -name: multiple commands execution
+      run: |
+       hostname -i
+       free -mh
+       df -h
+    
