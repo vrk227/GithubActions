@@ -2,22 +2,33 @@ name: Manual Workflow
 on:
   workflow_dispatch:
     inputs:
-      number1:
-        description: "Enter Number One"
+      name:
+        description: "Enter your name"
+        type: string
+        required: true
+        default: vrk
+      age:
+        description: "Enter your age"
         type: number
         required: true
-        default: 5
-      number2:
-        description: "Enter Number Two"
-        type: number
-        required: false
+      gender:
+        description: "Gender"
+        type: choice
+        options:
+          - Male
+          - Female
+      Graduate:
+        description: "Is Graduate"
+        type: boolean
+        
 jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-      - name: dispalying numbers
-        run: |
-          echo "Number1 value is ${{ inputs.number1}}"
+      - run: |
+          echo "My Name is ${{ inputs.name}}"
+          echo "my age is ${{ inputs.age }}"
+          echo "i am a ${{ inputs.gender }}
           echo "Number2 value is ${{ inputs.number2}}"
           
         
