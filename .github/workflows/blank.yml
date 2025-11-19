@@ -1,19 +1,23 @@
-name: workflow - one
+name: Manual Workflow
 on:
   workflow_dispatch:
+    inputs:
+      number1:
+        description: "Enter Number One"
+        type: number
+        required: true
+        default: 5
+      number2:
+        description: "Enter Number Two"
+        type: number
+        required: false
 jobs:
-  build-job:
-    name: Hello world
+  job1:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-        name: checkout code
-      - name: hello world
-        run: echo Hi Monisha
-
-      - name: multiple commands execution
+      - name: dispalying numbers
         run: |
-          hostname -i
-          free -mh
-          df -h
-    
+          echo "Number1 value is ${{ inputs.number1}}"
+          echo "Number2 value is ${{ inputs.number2}}"
+          
+        
