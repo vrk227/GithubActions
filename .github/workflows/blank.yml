@@ -29,6 +29,6 @@ jobs:
           echo "My Name is ${{ inputs.name}}"
           echo "my age is ${{ inputs.age }}"
           echo "i am a ${{ inputs.gender }}
-          echo "Number2 value is ${{ inputs.number2}}"
+          
           
         
