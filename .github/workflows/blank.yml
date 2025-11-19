@@ -1,34 +1,15 @@
 name: Manual Workflow
 on:
   workflow_dispatch:
-    inputs:
-      name:
-        description: "Enter your name"
-        type: string
-        required: true
-        default: vrk
-      age:
-        description: "Enter your age"
-        type: number
-        required: true
-      gender:
-        description: "Gender"
-        type: choice
-        options:
-          - Male
-          - Female
-      Graduate:
-        description: "Is Graduate"
-        type: boolean
-        
+    
 jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo "My Name is ${{ inputs.name}}"
-          echo "my age is ${{ inputs.age }}"
-          echo "i am a ${{ inputs.gender }}
+          echo "My Name "
+          echo "my age "
+          echo "i am"
           
           
         
